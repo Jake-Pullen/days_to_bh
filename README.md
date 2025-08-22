@@ -10,11 +10,11 @@ This nifty Python script fetches the latest UK bank holidays from the official G
 
 ## Features
  
-✅ Fetches real-time bank holiday data from GOV.UK
-✅ Calculates days until next holiday (because counting is hard)
-✅ Handles edge cases like today being a bank holiday 🎉
-✅ Shows special messages for tomorrow's holidays
-✅ No dependencies beyond standard library (except if you want dateutil)
+✅ Fetches real-time bank holiday data from GOV.UK  
+✅ Calculates days until next holiday (because counting is hard)  
+✅ Handles edge cases like today being a bank holiday 🎉  
+✅ Shows special messages for tomorrow's holidays  
+✅ No dependencies beyond standard library (except if you want dateutil)  
 
 ### Installation
 
