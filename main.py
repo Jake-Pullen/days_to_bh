@@ -24,23 +24,26 @@ def get_next_bank_holiday(holidays_data):
     next_holiday = None
     min_diff = None
 
-    # Process England and Wales holidays (main data source)
-    if "england-and-wales" in holidays_data:
-        for event in holidays_data["england-and-wales"]["events"]:
-            try:
-                # Parse the date string manually since we don't have dateutil
-                holiday_date = datetime.strptime(event["date"], "%Y-%m-%d").date()
-                if holiday_date >= today:
-                    diff = (holiday_date - today).days
-                    if min_diff is None or diff < min_diff:
-                        min_diff = diff
-                        next_holiday = {
-                            "title": event["title"],
-                            "date": holiday_date,
-                            "days_until": diff,
-                        }
-            except (ValueError, KeyError):
+    if "england-and-wales" not in holidays_data:
+        return None
+
+    for event in holidays_data["england-and-wales"]["events"]:
+        try:
+            holiday_date = datetime.strptime(event["date"], "%Y-%m-%d").date()
+
+            if holiday_date < today:
                 continue
+
+            diff = (holiday_date - today).days
+            if min_diff is None or diff < min_diff:
+                min_diff = diff
+                next_holiday = {
+                    "title": event["title"],
+                    "date": holiday_date,
+                    "days_until": diff,
+                }
+        except (ValueError, KeyError):
+            continue
 
     return next_holiday
 

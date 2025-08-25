@@ -48,9 +48,9 @@ Because we all have that one colleague who keeps asking "How many days till the 
 
 This script does not guarantee:
 
-That you'll actually take your holiday
-That the government won't change their mind about holidays
-That your boss will let you go on holiday
+* That you'll actually take your holiday
+* That the government won't change their mind about holidays
+* That your boss will let you go on holiday  
 But it does guarantee that you'll know exactly when the next one is!
 
 Made with ❤️ and ☕ by someone who's definitely going to take their holiday
